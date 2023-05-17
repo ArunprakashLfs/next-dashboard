@@ -6,7 +6,7 @@ import { useUser, UserProvider } from "@/context/userContext";
 // import { useRouter } from "next/router";
 // import { useState } from "react";
 // import { useUser } from "../context/UserContext.";
-// import { Users } from "../components/UserData/UserData";
+import { Users } from "@/Components/UserData";
 // import network from '../assets/images/webdeveloper.png'
 
 
@@ -49,7 +49,7 @@ const Mycomponent = () => {
         Swal.fire({
           title: `Successfully Logedin`,
           text: `Welcome ${selectedUser.name}`,
-          imageUrl: network,
+          // imageUrl: network,
           imageWidth: 400,
           imageHeight: 200,
           imageAlt: 'Custom image',
@@ -140,7 +140,8 @@ const Mycomponent = () => {
               </div>
             ) : null}
           </div> */}
-          <button className="bg-blueColor rounded-lg mt-[0.5rem] hover:bg-blue-500 text-white font-semibold p-[0.5rem]">
+          <button 
+          className="bg-blueColor rounded-lg mt-[0.5rem] hover:bg-blue-500 text-white font-semibold p-[0.5rem]">
             Login
           </button>
         </form>
