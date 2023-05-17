@@ -10,9 +10,6 @@ const UserContext = createContext();
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState({
     Users
-    // name: "John Doe",
-    // email: "john.doe@example.com",
-    // avatar: "https://randomuser.me/api/portraits/men/1.jpg",
   });
 
   return (
