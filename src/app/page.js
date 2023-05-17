@@ -3,7 +3,7 @@
 import Swal from "sweetalert2";
 import { useState } from "react";
 import { useUser, UserProvider } from "@/context/userContext";
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 // import { useState } from "react";
 // import { useUser } from "../context/UserContext.";
 import { Users } from "@/Components/UserData";
@@ -12,14 +12,14 @@ import Link from "next/link";
 
 
 
-const Mycomponent = () => {
-  // const router = useRouter()
- 
+const page = () => {
+  // const router = useRouter();
+
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [userType, setUserType] = useState("")
   const { setUser } = useUser();
-  
+
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
@@ -33,17 +33,17 @@ const Mycomponent = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if(email ==='' || password ===''){
+    if (email === '' || password === '') {
       Swal.fire(
         'Enter Proper value!',
         'You clicked the button!',
         'warning'
       )
-    }else{
+    } else {
       const selectedUser = Users[userType].find(
         (user) => user.email === email && user.password === password
       );
-  
+
       if (selectedUser) {
         // Successful login
         console.log('Logged in as ' + selectedUser.name);
@@ -54,22 +54,21 @@ const Mycomponent = () => {
           imageWidth: 400,
           imageHeight: 200,
           imageAlt: 'Custom image',
-        }); 
+        });
         setUser(selectedUser);
         // {userType==="admin"?Navigate('/Admin')
         // :userType==="teamLeader"? Navigate('/FormThree'): Navigate('/FormOne')}
         // {selectedUser.name = "Arun Prakash" ? Navigate("/Admin"): Navigate("/FormOne")}
-        if(userType === 'admin'){
-          // router.push('/Admin')
-          <Link href={'/admin'}></Link>
-        }else{
-          if(userType === 'teamLeader'){
+        if (userType === 'admin') {
+          router.push('/admin')
+        } else {
+          if (userType === 'teamLeader') {
             // router.push('/Admin')
-          }else{
+          } else {
             // router.push('/Admin')
           }
         }
-        
+
       } else {
         // Failed login
         Swal.fire(
@@ -83,9 +82,9 @@ const Mycomponent = () => {
         // }
       }
     };
-    }
+  }
 
-    
+
   return (
     <div className="container bg-whiteColor flex flex-col w-[100vw] h-[100vh] justify-center items-center ">
       <div className=" bg-shadowColor flex flex-col p-[2rem] rounded-lg">
@@ -127,7 +126,7 @@ const Mycomponent = () => {
           <label className="mb-4 flex flex-col gap-1">
             User Type
             <select className="rounded-lg p-2 " value={userType} onChange={handleUserTypeChange}>
-              <option  value="">Select User Type</option>
+              <option value="">Select User Type</option>
               <option value="admin">Admin</option>
               <option value="teamLeader">teamLeader</option>
               <option value="Employees">Employees</option>
@@ -142,8 +141,8 @@ const Mycomponent = () => {
               </div>
             ) : null}
           </div> */}
-          <button 
-          className="bg-blueColor rounded-lg mt-[0.5rem] hover:bg-blue-500 text-white font-semibold p-[0.5rem]">
+          <button
+            className="bg-blueColor rounded-lg mt-[0.5rem] hover:bg-blue-500 text-white font-semibold p-[0.5rem]">
             Login
           </button>
         </form>
@@ -151,15 +150,5 @@ const Mycomponent = () => {
     </div>
   );
 };
-
-
-const page = () => {
-  return (
-    <UserProvider>
-      <Mycomponent/>
-    </UserProvider>
-  )
-
-}
 
 export default page
