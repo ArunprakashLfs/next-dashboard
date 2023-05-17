@@ -7,7 +7,8 @@ import { useUser, UserProvider } from "@/context/userContext";
 // import { useState } from "react";
 // import { useUser } from "../context/UserContext.";
 import { Users } from "@/Components/UserData";
-// import network from '../assets/images/webdeveloper.png'
+import network from '@/assets/images/network.png'
+import Link from "next/link";
 
 
 
@@ -49,7 +50,7 @@ const Mycomponent = () => {
         Swal.fire({
           title: `Successfully Logedin`,
           text: `Welcome ${selectedUser.name}`,
-          // imageUrl: network,
+          imageUrl: network,
           imageWidth: 400,
           imageHeight: 200,
           imageAlt: 'Custom image',
@@ -60,6 +61,7 @@ const Mycomponent = () => {
         // {selectedUser.name = "Arun Prakash" ? Navigate("/Admin"): Navigate("/FormOne")}
         if(userType === 'admin'){
           // router.push('/Admin')
+          <Link href={'/admin'}></Link>
         }else{
           if(userType === 'teamLeader'){
             // router.push('/Admin')
