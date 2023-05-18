@@ -1,13 +1,15 @@
-// import arun from '../../assets/images/bumblebee.png'
-// import manoj from '../../assets/images/per3.png'
-// import imgthree from '../../assets/images/webdeveloper.png'
 'use client'
+
+import arun from '@/assets/images/bumblebee.png'
+import manoj from '@/assets/images/per3.png'
+import imgthree from '@assets/images/per2.p'
+
 export const Users ={
     admin:[{
         'id':1,
         'name':"Arun Prakash",
         'email':'arun@gmail.com',
-        // 'avatar':arun,
+        'avatar':arun,
         'password':'Arun@123',
         'department':" Admin",
         'Position':"Admin Incharge",
@@ -16,7 +18,7 @@ export const Users ={
     teamLeader:[{
         'id':2,
         'name':"Manoj",
-        // 'avatar':manoj,
+        'avatar':manoj,
         'email':'manoj@gmail.com',
         'password':'Manoj@123',
         'department':"Team Leader",
@@ -26,7 +28,7 @@ export const Users ={
     {
         'id':3,
         'name':"Vishnu",
-        // 'avatar':imgthree,
+        'avatar':imgthree,
         'email':'vishnu@gmail.com',
         'password':'vishnu@123',
         'department':"Team Leader",
@@ -36,7 +38,7 @@ export const Users ={
     Employees:[{
         'id':4,
         'name':"Kesavan",
-        // 'avatar':manoj,
+        'avatar':manoj,
         'email':'kesavan@gmail.com',
         'password':'Kesavan@123',
         'department':" Developer",
@@ -46,7 +48,7 @@ export const Users ={
     {
         'id':5,
         'name':'Naveen Kumar',
-        // 'avatar':manoj,
+        'avatar':manoj,
         'email':'naveen@gmail.com',
         'password':'Naveen@123',
         'department':" Developer",

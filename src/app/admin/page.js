@@ -8,8 +8,20 @@ import network from '@/assets/images/network.png'
 import techlead from '@/assets/images/teamleader.png'
 import TeamLeaderDashboard from '@/Components/TeamLeaderDashboard'
 import EmployeeDashboard from '@/Components/Employees'
+import { useUser } from '@/context/userContext'
+import { useRouter } from "next/navigation";
+
 
 const page = () => {
+  const router = useRouter()
+  const {user, setUser} = useUser()
+
+  const handleLogout = () => {
+    // Set the user data to null
+    router.replace('/')
+    setUser(null);
+  
+  };
 
     const cards = [
     {
@@ -41,22 +53,22 @@ const page = () => {
           <div className="flex flex-col h-screen bg-whiteColor">
         <div className="flex items-center justify-between px-4 py-2 bg-shadowColor shadow-md">
           <div className="flex items-center space-x-4">
-            {/* <img
+            <img
               src={user.avatar}
               alt={user.name}
               className="w-10 h-10 rounded-full"
-            /> */}
-            {/* <div>
+            />
+            <div>
               <h1 className="text-lg font-bold">{user.name}</h1>
               <p className="text-sm text-gray-600">{user.email}</p>
-            </div> */}
+            </div>
           </div>
           <div className="flex items-center space-x-2">
             {/* <Link to="/FormOne" className="text-blue-600 hover:text-blue-800">
               Edit Profile
             </Link> */}
             <button
-              // onClick={handleLogout}
+              onClick={handleLogout}
               className="px-4 py-2 text-white bg-red-600 rounded hover:bg-red-700"
             >
               Logout
