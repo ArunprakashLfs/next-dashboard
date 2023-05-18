@@ -1,6 +1,7 @@
 "use client"
 
 import Swal from "sweetalert2";
+import Image from "next/image";
 import { useState } from "react";
 import { useUser, UserProvider } from "@/context/userContext";
 // import { useRouter } from "next/router";
@@ -8,12 +9,15 @@ import { useUser, UserProvider } from "@/context/userContext";
 import { useRouter } from "next/navigation";
 // import { useState } from "react";
 // import { useUser } from "../context/UserContext.";
-import { Users } from "@/Components/UserData";
-import network from '@/assets/images/network.png'
+import { Users } from "@/Components/UserData"
 // import Link from "next/link";
 // import next from "next/types";
 
-
+const network =()=>{
+  return(
+    <Image src='/assets/images/network.png' alt="network" width={50} height={50}/>
+  )
+}
 
 const page = () => {
   const router = useRouter();
@@ -66,9 +70,9 @@ const page = () => {
           router.replace('/admin')
         } else {
           if (userType === 'teamLeader') {
-            // router.push('/Admin')
+            router.replace('/admin')
           } else {
-            // router.push('/Admin')
+            router.replace('/admin')
           }
         }
 
