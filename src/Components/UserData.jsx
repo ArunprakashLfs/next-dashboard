@@ -1,6 +1,6 @@
-'use client'
+// 'use client'
 import Image from "next/image"
-// import arun from '@/assets/images/bumblebee.png'
+// import Image from '@/assets/images/bumblebee.png'
 // import manoj from '@/assets/images/per3.png'
 // import imgthree from '@assets/images/per2.p'
 

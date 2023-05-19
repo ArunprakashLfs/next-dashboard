@@ -2,10 +2,11 @@ import { useFormik } from 'formik'
 import React from 'react'
 import {motion} from 'framer-motion'
 import * as Yup from "yup";
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
+import AddressForm from './AddressForm';
 
 const BasicForm = () => {
-    const Navigate = useNavigate()
+    const router = useRouter()
     const formik = useFormik({
         initialValues:{
             FirstName: '',
@@ -39,7 +40,7 @@ const BasicForm = () => {
         }),
         onSubmit:(values)=>{
             console.log(values);
-            Navigate("/FormTwo")
+            router.replace(<AddressForm/>)
         },
     })
     // console.log(formik.values);

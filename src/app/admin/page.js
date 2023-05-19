@@ -4,6 +4,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 // import developer from '@/assets/images/webdeveloper.png'
 // import network from '@/assets/images/network.png'
 // import techlead from '@/assets/images/teamleader.png'
@@ -11,6 +12,7 @@ import TeamLeaderDashboard from '@/Components/TeamLeaderDashboard'
 import EmployeeDashboard from '@/Components/Employees'
 import { useUser } from '@/context/userContext'
 import { useRouter } from "next/navigation";
+import BasicForm from '@/Components/forms/BasicForm'
 
 
 const page = () => {
@@ -53,7 +55,7 @@ const page = () => {
     },
     {
       title: "Technical Lead",
-      icon: 'techlead',
+      icon: techlead,
       value: 3,
       color: "bg-blueColor",
     },
@@ -75,9 +77,9 @@ const page = () => {
           </div>
         </div>
         <div className="flex items-center space-x-2">
-          {/* <Link to="/FormOne" className="text-blue-600 hover:text-blue-800">
+          <Link href={<BasicForm/>} className="text-blue-600 hover:text-blue-800">
             Edit Profile
-          </Link> */}
+          </Link>
           <button
             onClick={handleLogout}
             className="px-4 py-2 text-white bg-red-600 rounded hover:bg-red-700"
@@ -126,9 +128,9 @@ const page = () => {
           </div>
         </div>
         <div className="flex items-center space-x-2">
-          {/* <Link to="/FormOne" className="text-blue-600 hover:text-blue-800">
+          <Link href={<BasicForm/>} className="text-blue-600 hover:text-blue-800" >
             Edit Profile
-          </Link> */}
+          </Link>
           <button
             onClick={handleLogout}
             className="px-4 py-2 text-white bg-red-600 rounded hover:bg-red-700"

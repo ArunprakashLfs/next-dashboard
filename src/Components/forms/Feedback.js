@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { useFormik} from "formik";
 import * as Yup from "yup";
 
@@ -22,7 +23,7 @@ const FeedbackSchema = Yup.object().shape({
 
 
 const Feedback = () => {
-  const Navigete = useNavigate()
+  const router = useRouter()
   const formik = useFormik({
     initialValues: {
       picked: '',
@@ -34,7 +35,7 @@ const Feedback = () => {
     validationSchema: FeedbackSchema,
     onSubmit: (values) => {
       console.log(values);
-      Navigete("/Admin")
+      router.replace('/')
     },
   });
 

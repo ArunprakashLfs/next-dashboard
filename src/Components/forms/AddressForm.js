@@ -1,11 +1,14 @@
 import * as Yup from 'yup';
 import { motion } from 'framer-motion';
 import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
+import Feedback from './Feedback';
+
 
 
 const AddressForm = () => {
-  const Navigate = useNavigate()
+  const router = useRouter()
   const formik = useFormik({
     initialValues: {
       address: '',
@@ -38,7 +41,7 @@ const AddressForm = () => {
     }),
     onSubmit: (values) => {
       console.log(values);
-      Navigate('/FormThree')
+      router.replace(<Feedback/>)
     },
   })
   return (
