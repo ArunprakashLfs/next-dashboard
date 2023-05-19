@@ -4,62 +4,38 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { cards } from '@/Components/Card'
 import Link from 'next/link'
-// import developer from '@/assets/images/webdeveloper.png'
-// import network from '@/assets/images/network.png'
-// import techlead from '@/assets/images/teamleader.png'
+// import developer from '../../../public/images/webdeveloper.png'
+// import network from '../../../public/images/network.png'
+// import techlead from '../../../public/images/teamleader.png'
 import TeamLeaderDashboard from '@/Components/TeamLeaderDashboard'
 import EmployeeDashboard from '@/Components/Employees'
 import { useUser } from '@/context/userContext'
 import { useRouter } from "next/navigation";
-import BasicForm from '@/Components/forms/BasicForm'
+// import BasicForm from '@/Components/forms/BasicForm'
 
 
 const page = () => {
 
-  const techlead = () =>{
-    return(
-      <div>
-        <Image src="/assets/images/teamleader.png" alt='teamleader' width={50} height={50} />
-      </div>
-    )
-  }
+  // const techlead = () =>{
+  //   return(
+  //     <div>
+  //       <Image src="/assets/images/teamleader.png" alt='teamleader' width={50} height={50} />
+  //     </div>
+  //   )
+  // }
   const router = useRouter()
   const {user, setUser} = useUser()
 
   const handleLogout = () => {
     // Set the user data to null
-    router.replace('/')
+    router.push('/')
     setUser(null);
   
   };
 
-    const cards = [
-    {
-      title: "Developer",
-      // icon: developer,
-      value: 12,
-      color: "bg-blueColor",
-    },
-    {
-      title: "Network Engineer",
-      // icon: network,
-      value: 4,
-      color: "bg-blueColor",
-    },
-    {
-      title: "Human Resource",
-      icon: "https://img.lovepik.com/free-png/20211117/lovepik-hr-notebook-computer-vector-elements-png-image_400986416_wh1200.png",
-      value: 7,
-      color: "bg-blueColor",
-    },
-    {
-      title: "Technical Lead",
-      icon: techlead,
-      value: 3,
-      color: "bg-blueColor",
-    },
-  ];
+  
   {
     if (user.email === 'arun@gmail.com') {
       return (
@@ -77,7 +53,7 @@ const page = () => {
           </div>
         </div>
         <div className="flex items-center space-x-2">
-          <Link href={<BasicForm/>} className="text-blue-600 hover:text-blue-800">
+          <Link href='/basicForm' className="text-blue-600 hover:text-blue-800">
             Edit Profile
           </Link>
           <button
@@ -100,7 +76,7 @@ const page = () => {
             <div className="flex items-center space-x-2">
               <h2 className="text-xl font-bold">{card.title}</h2>
             </div>
-            <img src={card.icon} alt={card.title}  className='h-[3rem]'/>
+            <img src={card.icon} alt={card.title}  className='h-[3rem] w-[4rem]'/>
             <p className="text-4xl font-bold">{card.value}</p>
             </motion.div>
         ))}
@@ -117,10 +93,12 @@ const page = () => {
         <div className="flex flex-col h-screen bg-whiteColor">
       <div className="flex items-center justify-between px-4 py-2 bg-shadowColor shadow-md">
         <div className="flex items-center space-x-4">
-          <img
+          <Image
             src={user.avatar}
             alt={user.name}
-            className="w-10 h-10 rounded-full"
+            width={10}
+            height={10}
+            className="rounded-full"
           />
           <div>
             <h1 className="text-lg font-bold">{user.name}</h1>
@@ -128,7 +106,7 @@ const page = () => {
           </div>
         </div>
         <div className="flex items-center space-x-2">
-          <Link href={<BasicForm/>} className="text-blue-600 hover:text-blue-800" >
+          <Link href='/basicForm' className="text-blue-600 hover:text-blue-800" >
             Edit Profile
           </Link>
           <button
