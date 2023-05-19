@@ -9,7 +9,7 @@ import { useUser, UserProvider } from "@/context/userContext";
 import { useRouter } from "next/navigation";
 // import { useState } from "react";
 // import { useUser } from "../context/UserContext.";
-import { Users } from "@/Components/UserData"
+import { Users } from "../Components/UserData"
 // import Link from "next/link";
 // import next from "next/types";
 
