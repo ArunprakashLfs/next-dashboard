@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import Image from "next/image";
 import { useState } from "react";
 import { useUser, UserProvider } from "@/context/userContext";
-// import { useRouter } from "next/router";
+// import { useRouter } from "next/Router";
 // import { useRouter } from "next/router";
 import { useRouter } from "next/navigation";
 // import { useState } from "react";
@@ -20,7 +20,7 @@ const network =()=>{
 }
 
 const page = () => {
-  const router = useRouter();
+  const Router = useRouter();
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -67,12 +67,12 @@ const page = () => {
         // :userType==="teamLeader"? Navigate('/FormThree'): Navigate('/FormOne')}
         // {selectedUser.name = "Arun Prakash" ? Navigate("/Admin"): Navigate("/FormOne")}
         if (userType === 'admin') {
-          router.replace('/admin')
+          Router.replace('/admin')
         } else {
           if (userType === 'teamLeader') {
-            router.replace('/admin')
+            Router.replace('/admin')
           } else {
-            router.replace('/admin')
+            Router.replace('/admin')
           }
         }
 
