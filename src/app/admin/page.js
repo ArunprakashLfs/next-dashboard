@@ -31,7 +31,7 @@ const page = () => {
   const handleLogout = () => {
     // Set the user data to null
     router.push('/')
-    setUser(null);
+    // setUser(null);
   
   };
 
@@ -93,12 +93,10 @@ const page = () => {
         <div className="flex flex-col h-screen bg-whiteColor">
       <div className="flex items-center justify-between px-4 py-2 bg-shadowColor shadow-md">
         <div className="flex items-center space-x-4">
-          <Image
+          <img
             src={user.avatar}
             alt={user.name}
-            width={10}
-            height={10}
-            className="rounded-full"
+            className="h-[3rem] w-[3rem]  rounded-full"
           />
           <div>
             <h1 className="text-lg font-bold">{user.name}</h1>
