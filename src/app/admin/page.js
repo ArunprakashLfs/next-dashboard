@@ -2,7 +2,7 @@
 
 "use client"
 import React from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { cards } from '@/Components/Card'
 import Link from 'next/link'
@@ -25,12 +25,12 @@ const page = () => {
   //     </div>
   //   )
   // }
-  const router = useRouter()
+  const Router = useRouter()
   const {user, setUser} = useUser()
 
   const handleLogout = () => {
     // Set the user data to null
-    router.push('/')
+    Router.push('/')
     // setUser(null);
   
   };
