@@ -36,7 +36,7 @@ const page = () => {
     validationSchema: FeedbackSchema,
     onSubmit: (values) => {
       console.log(values);
-      router.replace('/')
+      router.replace('/admin')
     },
   });
 

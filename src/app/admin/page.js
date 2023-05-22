@@ -138,7 +138,7 @@ const page = () => {
           </div>
         </div>
         <div className="flex items-center space-x-2">
-          <Link href={<EmployeeDashboard/>} className="text-blue-600 hover:text-blue-800">
+          <Link href='/basicForm' className="text-blue-600 hover:text-blue-800">
             Edit Profile
           </Link>
           <button

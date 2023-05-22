@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 // import AddressForm from './AddressForm';
 
 const page = () => {
-    const router = useRouter()
+    const Router = useRouter()
     const formik = useFormik({
         initialValues:{
             FirstName: '',
@@ -41,7 +41,7 @@ const page = () => {
         }),
         onSubmit:(values)=>{
             console.log(values);
-            router.replace('/addressForm')
+            Router.replace('/addressForm')
         },
     })
     // console.log(formik.values);
