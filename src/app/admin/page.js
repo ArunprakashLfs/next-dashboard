@@ -2,7 +2,7 @@
 
 "use client"
 import React from 'react'
-// import Image from 'next/image'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { cards } from '@/Components/Card'
 import Link from 'next/link'
@@ -38,13 +38,16 @@ const page = () => {
   
   {
     if (user.email === 'arun@gmail.com') {
+      console.log(user.avatar);
       return (
         <div className="flex flex-col h-screen bg-whiteColor">
       <div className="flex items-center justify-between px-4 py-2 bg-shadowColor shadow-md">
         <div className="flex items-center space-x-4">
-          <img
+          <Image
             src={user.avatar}
             alt={user.name}
+            width={100}
+            height={100}
             className="w-10 h-10 rounded-full"
           />
           <div>

@@ -8,7 +8,7 @@ export const Users ={
         'id':1,
         'name':"Arun Prakash",
         'email':'arun@gmail.com',
-        'avatar': 'https://images.pexels.com/photos/428328/pexels-photo-428328.jpeg?auto=compress&cs=tinysrgb&w=600',
+        'avatar':'/images/bumblebee.png',
         'password':'Arun@123',
         'department':" Admin",
         'Position':"Admin Incharge",
